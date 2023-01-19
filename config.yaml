@@ -66,6 +66,23 @@ inbounds:
     - http
     - tls
     - quic
+- port: 50000
+  protocol: socks
+  settings:
+    auth: password
+    accounts:
+    - user: "uuid"
+      pass: "uuid"
+  streamSettings:
+    network: ws
+    wsSettings:
+      path: /uuid-so
+  sniffing:
+    enabled: true
+    destOverride:
+    - http
+    - tls
+    - quic    
 outbounds:
 - protocol: freedom
   tag: direct
